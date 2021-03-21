@@ -49,13 +49,16 @@ import {PropType} from "vue";
 @Component
 export default class FormComponent extends Vue {
   @Prop({
-    type: Object as PropType<{ value: string }>
+    type: Object as PropType<{ value: string }>,
+    validator: (firstName) => ('value') in firstName
   }) firstName!: { value: string };
   @Prop({
-    type: Object as PropType<{ value: string }>
+    type: Object as PropType<{ value: string }>,
+    validator: (lastName) => ('value') in lastName
   }) lastName!: { value: string };
   @Prop({
-    type: Object as PropType<{ value: string }>
+    type: Object as PropType<{ value: string }>,
+    validator: (phoneNumber) => ('value') in phoneNumber
   }) phoneNumber!: { value: string };
 }
 </script>
