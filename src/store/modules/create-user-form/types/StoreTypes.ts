@@ -1,0 +1,5 @@
+export const enum Getters {
+    GET_FIRST_NAME= 'GET_FIRST_NAME',
+    GET_LAST_NAME = 'GET_LAST_NAME',
+    GET_PHONE_NUMBER = 'GET_PHONE_NUMBER'
+}

@@ -44,17 +44,18 @@
 
 <script lang="ts">
 import {Component, Prop, Vue} from "vue-property-decorator";
+import {PropType} from "vue";
 
 @Component
 export default class FormComponent extends Vue {
   @Prop({
-    type: String
-  }) firstName!: string;
+    type: Object as PropType<{ value: string }>
+  }) firstName!: { value: string };
   @Prop({
-    type: String
-  }) lastName!: string;
+    type: Object as PropType<{ value: string }>
+  }) lastName!: { value: string };
   @Prop({
-    type: String
-  }) phoneNumber!: string;
+    type: Object as PropType<{ value: string }>
+  }) phoneNumber!: { value: string };
 }
 </script>
