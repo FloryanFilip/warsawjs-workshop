@@ -47,11 +47,10 @@
 import {Component, Emit, Prop, Vue} from "vue-property-decorator";
 import {PropType} from "vue";
 import ValidateInputMixin from '@/mixins/validate-input.mixin.vue';
+import {mixins} from "vue-class-component";
 
-@Component({
-  mixins: [ValidateInputMixin]
-})
-export default class FormComponent extends Vue {
+@Component
+export default class FormComponent extends mixins(ValidateInputMixin) {
   @Prop({
     type: Object as PropType<{ value: string }>,
     validator: (firstName) => ('value') in firstName
