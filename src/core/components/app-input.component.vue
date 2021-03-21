@@ -1,6 +1,6 @@
 <template>
   <label>
-    Nazwisko
+    <slot></slot>
     <input v-bind="$attrs" v-on="$listeners"/>
   </label>
 </template>

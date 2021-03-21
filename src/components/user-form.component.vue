@@ -5,19 +5,34 @@
         Rejestracja nowego użytkownika
       </div>
       <div>
-        <label>
-          Imię
-          <input v-model="firstName"/>
-        </label>
+        <app-input
+            type="text"
+            placeholder="Imię"
+            :value="firstName"
+            @input="firstName = $event.target.value"
+        >
+          Imie
+        </app-input>
       </div>
       <div>
-        <app-input value="Filip"/>
+        <app-input
+            type="text"
+            placeholder="Nazwisko"
+            :value="lastName"
+            @input="lastName = $event.target.value"
+        >
+          Nazwisko
+        </app-input>
       </div>
       <div>
-        <label>
+        <app-input
+            type="text"
+            placeholder="Numer telefonu"
+            :value="phoneNumber"
+            @input="phoneNumber = $event.target.value"
+        >
           Numer telefonu
-          <input v-model="phoneNumber"/>
-        </label>
+        </app-input>
       </div>
       <div>
         <button type="submit">Potwierdz</button>

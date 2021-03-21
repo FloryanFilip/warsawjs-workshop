@@ -1,5 +1,5 @@
 <template>
-  <my-form :first-name="firstName" :last-name="lastName" :phone-number="phoneNumber"/>
+  <my-form :first-name.sync="firstName" :last-name.sync="lastName" :phone-number.sync="phoneNumber"/>
 </template>
 
 
