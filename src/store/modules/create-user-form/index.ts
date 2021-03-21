@@ -4,7 +4,7 @@ import {actions} from "@/store/modules/create-user-form/actions";
 import {mutations} from "@/store/modules/create-user-form/mutations";
 import {state} from "@/store/modules/create-user-form/state";
 import {CreateUserFormState} from "@/store/modules/create-user-form/types/CreateUserFormState";
-import {RootState} from "@/store/types";
+import {RootState} from "@/store/types/RootState";
 
 export const store: Module<CreateUserFormState, RootState> = {
     namespaced: true,

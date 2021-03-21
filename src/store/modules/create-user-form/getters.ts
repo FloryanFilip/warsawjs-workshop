@@ -1,6 +1,6 @@
 import {GetterTree} from "vuex";
 import {CreateUserFormState} from "@/store/modules/create-user-form/types/CreateUserFormState";
-import {RootState} from "@/store/types";
+import {RootState} from "@/store/types/RootState";
 import { Getters } from '@/store/modules/create-user-form/types/StoreTypes';
 
 export const getters: GetterTree<CreateUserFormState, RootState> = {

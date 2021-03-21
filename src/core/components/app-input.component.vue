@@ -1,5 +1,5 @@
 <template>
-  <label>
+  <label @click.stop>
     <slot></slot>
     <input v-bind="$attrs" v-on="$listeners"/>
   </label>

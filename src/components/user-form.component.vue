@@ -8,7 +8,7 @@
         <app-input
             type="text"
             placeholder="Imię"
-            :value="firstName"
+            :value="firstName.value"
             @input="$emit('setFirstName', $event.target.value)"
         >
           Imie
@@ -18,7 +18,7 @@
         <app-input
             type="text"
             placeholder="Nazwisko"
-            :value="lastName"
+            :value="lastName.value"
             @input="$emit('setLastName', $event.target.value)"
         >
           Nazwisko
@@ -28,7 +28,7 @@
         <app-input
             type="text"
             placeholder="Numer telefonu"
-            :value="phoneNumber"
+            :value="phoneNumber.value"
             @input="$emit('setPhoneNumber', $event.target.value)"
         >
           Numer telefonu

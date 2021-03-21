@@ -1,6 +1,6 @@
 import {ActionContext, ActionTree} from "vuex";
 import {CreateUserFormState} from "@/store/modules/create-user-form/types/CreateUserFormState";
-import {RootState} from "@/store/types";
+import {RootState} from "@/store/types/RootState";
 import {Actions, Mutations} from "@/store/modules/create-user-form/types/StoreTypes";
 
 export const actions: ActionTree<CreateUserFormState, RootState> = {
