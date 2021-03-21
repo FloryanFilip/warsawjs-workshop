@@ -9,10 +9,11 @@
             type="text"
             placeholder="Imię"
             :value="firstName.value"
-            @input="$emit('setFirstName', $event.target.value)"
+            @input="handleFirstNameInput($event.target.value)"
         >
           Imie
         </app-input>
+        {{ firstNameError }}
       </div>
       <div>
         <app-input
@@ -43,10 +44,13 @@
 </template>
 
 <script lang="ts">
-import {Component, Prop, Vue} from "vue-property-decorator";
+import {Component, Emit, Prop, Vue} from "vue-property-decorator";
 import {PropType} from "vue";
+import ValidateInputMixin from '@/mixins/validate-input.mixin.vue';
 
-@Component
+@Component({
+  mixins: [ValidateInputMixin]
+})
 export default class FormComponent extends Vue {
   @Prop({
     type: Object as PropType<{ value: string }>,
@@ -60,5 +64,18 @@ export default class FormComponent extends Vue {
     type: Object as PropType<{ value: string }>,
     validator: (phoneNumber) => ('value') in phoneNumber
   }) phoneNumber!: { value: string };
+
+  firstNameError = '';
+
+  handleFirstNameInput(value: string): void {
+    if (!this.minLengthValid(value, 3)) this.firstNameError = 'Imię jest za krótkie';
+    else this.firstNameError = '';
+    this.emitSetFirstName(value);
+  }
+
+  @Emit('setFirstName')
+  emitSetFirstName(value: string): string {
+    return value;
+  }
 }
 </script>
