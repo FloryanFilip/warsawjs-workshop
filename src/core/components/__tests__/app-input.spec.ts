@@ -1,10 +1,25 @@
-import {mount} from "@vue/test-utils";
+import {mount, Wrapper} from "@vue/test-utils";
 import AppInputComponent from "@/core/components/app-input.component.vue";
 
 describe('AppInput', () => {
-    it('should render default slot content by default', () => {
-        const wrapper = mount(AppInputComponent);
+    let wrapper!: Wrapper<AppInputComponent>;
+    const factory = (slots?: any) => {
+        return mount(AppInputComponent, {
+            slots: {
+                ...slots
+            }
+        })
+    }
 
+    beforeEach(() => {
+        wrapper = factory();
+    });
+
+    afterEach(() => {
+        wrapper.destroy();
+    });
+
+    it('should render default slot content by default', () => {
         const label = wrapper.find('[data-testid="label"]'); // normal query selector: any valid DOM node
         // or class selector
 
@@ -12,10 +27,8 @@ describe('AppInput', () => {
     });
 
     it('it should render provided label slot context', () => {
-        const wrapper = mount(AppInputComponent, {
-            slots: {
-                default: '<div>Jakaś zawartość</div>'
-            }
+        wrapper = factory({
+            default: '<div>Jakaś zawartość</div>'
         });
 
         const label = wrapper.find('[data-testid="label"]');

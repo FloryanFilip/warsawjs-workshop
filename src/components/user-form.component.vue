@@ -40,8 +40,8 @@
         </app-input>
       </div>
       <div>
-        <button type="submit">Potwierdz</button>
-        <button type="button">Anuluj</button>
+        <button data-testid="submitButton" type="submit">Potwierdz</button>
+        <button data-testid="cancelButton" type="button">Anuluj</button>
       </div>
     </form>
   </section>
