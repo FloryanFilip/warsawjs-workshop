@@ -1,6 +1,6 @@
 <template>
-  <label @click.stop>
-    <slot></slot>
+  <label data-testid="label" @click.stop>
+    <slot>Domyślny label</slot>
     <input v-bind="$attrs" v-on="$listeners"/>
   </label>
 </template>

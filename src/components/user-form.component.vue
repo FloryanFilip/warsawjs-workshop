@@ -6,27 +6,31 @@
       </div>
       <div>
         <app-input
+            data-testid="nameInput"
             type="text"
             placeholder="Imię"
             :value="firstName.value"
             @input="handleFirstNameInput($event.target.value)"
         >
-          Imie
+          Imię
         </app-input>
-        {{ firstNameError }}
       </div>
       <div>
         <app-input
+            data-testid="lastNameInput"
             type="text"
             placeholder="Nazwisko"
             :value="lastName.value"
             @input="$emit('setLastName', $event.target.value)"
         >
-          Nazwisko
+          <template #default>
+            Nazwisko
+          </template>
         </app-input>
       </div>
       <div>
         <app-input
+            data-testid="numberInput"
             type="text"
             placeholder="Numer telefonu"
             :value="phoneNumber.value"
